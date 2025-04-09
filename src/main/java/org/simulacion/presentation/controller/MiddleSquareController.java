@@ -1,10 +1,13 @@
-package org.simulacion.controller;
+package org.simulacion.presentation.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.simulacion.application.Main;
+import org.simulacion.configuration.AppConfig;
+import org.simulacion.exception.InvalidInputException;
 import org.simulacion.generator.MiddleSquare;
+import org.simulacion.presentation.dto.MiddleSquareRequest;
+import org.simulacion.service.MiddleSquareService;
 import utils.Path;
 
 import java.util.List;
@@ -14,6 +17,11 @@ import java.util.stream.Collectors;
 
 public class MiddleSquareController {
 
+    private final MiddleSquareService service;
+
+    public MiddleSquareController() {
+        this.service = new MiddleSquareService(new MiddleSquare());
+    }
 
     @FXML
     private TextField txtDigits;
@@ -28,37 +36,22 @@ public class MiddleSquareController {
     private TextField txtSead;
 
     @FXML
-    void generateNumbers(ActionEvent event) {
+    void generateNumbers() {
         try {
-            if (txtSead.getText().isEmpty() || txtDigits.getText().isEmpty() || txtQuantity.getText().isEmpty()) {
-                throw new IllegalArgumentException("Complete todos los campos.");
-            }
-
-            int seed = Integer.parseInt(txtSead.getText());
-            int digits = Integer.parseInt(txtDigits.getText());
-            int quantity = Integer.parseInt(txtQuantity.getText());
-
-            if (digits <= 0 || quantity <= 0) {
-                throw new IllegalArgumentException("Dígitos y cantidad deben ser > 0.");
-            }
-
-            MiddleSquare middleSquare = new MiddleSquare();
-            String numbersText = formatNumbers(middleSquare.getNumbers(seed, digits, quantity));
-            txtFieldNumbers.setText(numbersText);
-
+            MiddleSquareRequest request = new MiddleSquareRequest(  Integer.parseInt(txtSead.getText()),
+                                                                    Integer.parseInt(txtDigits.getText()),
+                                                                    Integer.parseInt(txtQuantity.getText()));
+            List<Double> numbers = service.generateNumbers(request);
+            txtFieldNumbers.setText(formatNumbers(numbers));
             clearInputFields();
-
-        } catch (NumberFormatException e) {
-            showErrorAlert("Error", "Ingrese solo números válidos.");
-        } catch (IllegalArgumentException e) {
+        } catch (InvalidInputException | NumberFormatException e) {
             showErrorAlert("Error", e.getMessage());
         }
     }
 
-
     @FXML
     void returnMain(ActionEvent event) {
-        Main.main.setScene(Path.PRINCIPAL_CONTROLLER);
+        AppConfig.setScene(Path.PRINCIPAL_CONTROLLER);
     }
 
     @FXML
@@ -88,10 +81,6 @@ public class MiddleSquareController {
         textField.setTextFormatter(new TextFormatter<>(filter));
     }
 
-    private void addClearTextAreaListener(TextField field) {
-        field.setOnMouseClicked(e -> txtFieldNumbers.clear());
-        field.setOnKeyPressed(e -> txtFieldNumbers.clear());
-    }
 
     private String formatNumbers(List<Double> numbers) {
         AtomicInteger counter = new AtomicInteger();

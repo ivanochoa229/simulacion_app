@@ -1,8 +1,8 @@
-package org.simulacion.controller;
+package org.simulacion.presentation.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import org.simulacion.application.Main;
+import org.simulacion.configuration.AppConfig;
 import utils.Path;
 
 public class PrincipalController {
@@ -19,7 +19,7 @@ public class PrincipalController {
 
     @FXML
     void selectMiddleSquare(ActionEvent event) {
-        Main.main.setScene(Path.MIDDLE_SQUARE_CONTROLLER);
+        AppConfig.setScene(Path.MIDDLE_SQUARE_CONTROLLER);
     }
 
     @FXML

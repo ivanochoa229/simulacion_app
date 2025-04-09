@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="521.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.controller.PrincipalController">
+<AnchorPane prefHeight="521.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.PrincipalController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" layoutX="-1.0" stroke="#f8f7f7" strokeType="INSIDE" strokeWidth="0.0" width="491.0" />
       <Label layoutX="116.0" layoutY="21.0" text="Seleccione el generador" textFill="WHITE">

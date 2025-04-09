@@ -1,4 +1,4 @@
-package utils;
+package org.simulacion.utils;
 
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;

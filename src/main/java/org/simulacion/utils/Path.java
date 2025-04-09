@@ -1,4 +1,4 @@
-package utils;
+package org.simulacion.utils;
 
 public class Path {
     public static final String PRINCIPAL_CONTROLLER = "/Principal.fxml";

@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 import org.simulacion.configuration.AppConfig;
-import utils.Path;
+import org.simulacion.utils.Path;
 
 
 

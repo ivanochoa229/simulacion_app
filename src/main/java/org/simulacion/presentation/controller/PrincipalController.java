@@ -3,7 +3,7 @@ package org.simulacion.presentation.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import org.simulacion.configuration.AppConfig;
-import utils.Path;
+import org.simulacion.utils.Path;
 
 public class PrincipalController {
 

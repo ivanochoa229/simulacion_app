@@ -7,9 +7,9 @@ import org.simulacion.configuration.AppConfig;
 import org.simulacion.generator.MiddleSquare;
 import org.simulacion.presentation.dto.MiddleSquareRequest;
 import org.simulacion.service.MiddleSquareService;
-import utils.InputCleaner;
-import utils.Path;
-import utils.ViewUtils;
+import org.simulacion.utils.InputCleaner;
+import org.simulacion.utils.Path;
+import org.simulacion.utils.ViewUtils;
 
 import java.util.List;
 

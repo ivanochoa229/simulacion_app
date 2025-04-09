@@ -1,4 +1,4 @@
-package utils;
+package org.simulacion.utils;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

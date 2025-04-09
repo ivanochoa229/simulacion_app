@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="521.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.controller.PrincipalController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" layoutX="-1.0" stroke="#f8f7f7" strokeType="INSIDE" strokeWidth="0.0" width="491.0" />
+      <Label layoutX="116.0" layoutY="21.0" text="Seleccione el generador" textFill="WHITE">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="160.0" layoutY="137.0" mnemonicParsing="false" onAction="#selectMiddleSquare" prefHeight="25.0" prefWidth="164.0" text="Parte Central" textOverrun="CENTER_WORD_ELLIPSIS" />
+      <Button layoutX="161.0" layoutY="204.0" mnemonicParsing="false" onAction="#selectLehmer" prefHeight="25.0" prefWidth="164.0" text="Lehmer" textOverrun="CENTER_WORD_ELLIPSIS" />
+      <Button layoutX="160.0" layoutY="276.0" mnemonicParsing="false" onAction="#selectMix" prefHeight="25.0" prefWidth="164.0" text="Congruencial Mixto" textOverrun="CENTER_WORD_ELLIPSIS" />
+      <Button layoutX="161.0" layoutY="347.0" mnemonicParsing="false" onAction="#selectMult" prefHeight="25.0" prefWidth="164.0" text="Congruencial Multiplicativo" textOverrun="CENTER_WORD_ELLIPSIS" />
+      <Button layoutX="160.0" layoutY="419.0" mnemonicParsing="false" onAction="#selectAdd" prefHeight="25.0" prefWidth="164.0" text="Congruencial Aditivo" textOverrun="CENTER_WORD_ELLIPSIS" />
+   </children>
+</AnchorPane>

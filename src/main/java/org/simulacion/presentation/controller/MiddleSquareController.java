@@ -8,6 +8,7 @@ import org.simulacion.generator.MiddleSquare;
 import org.simulacion.presentation.dto.MiddleSquareRequest;
 import org.simulacion.service.MiddleSquareService;
 import org.simulacion.utils.InputCleaner;
+import org.simulacion.utils.InputValidator;
 import org.simulacion.utils.Path;
 import org.simulacion.utils.ViewUtils;
 
@@ -35,6 +36,10 @@ public class MiddleSquareController {
 
     @FXML
     void generateNumbers() {
+        if (InputValidator.areFieldsEmpty(txtSead, txtDigits, txtQuantity)) {
+            ViewUtils.showErrorAlert("Error", "Complete los campos");
+            return;
+        }
         try {
             MiddleSquareRequest request = new MiddleSquareRequest(  Integer.parseInt(txtSead.getText()),
                                                                     Integer.parseInt(txtDigits.getText()),

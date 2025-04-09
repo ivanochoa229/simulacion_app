@@ -14,7 +14,7 @@ public class MiddleSquareService {
         this.generator = generator;
     }
 
-    public List<Double> generateNumbers(MiddleSquareRequest request) {
+    public List<Double> generateNumbers(MiddleSquareRequest request) throws InvalidInputException{
         validateInput(request);
         List<Integer> conditions = List.of(
                 request.seed(),

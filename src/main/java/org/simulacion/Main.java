@@ -1,5 +1,6 @@
 package org.simulacion;
 
+import org.simulacion.generator.Lehmer;
 import org.simulacion.generator.MiddleSquare;
 import org.simulacion.generator.MultCongruential;
 import org.simulacion.generator.AdditCongruential;
@@ -24,5 +25,9 @@ public class Main {
         List<Double> numbers = additCongruential.getNumbers(3, 5147, 3);
         numbers.forEach(System.out::println);
 
+        /* METODO LEHMER */
+        Lehmer lehmer = new Lehmer();
+        List<Double> numbersLehmer = lehmer.getNumbers(73, 35451, 8);
+        numbersLehmer.forEach(System.out::println);
     }
 }

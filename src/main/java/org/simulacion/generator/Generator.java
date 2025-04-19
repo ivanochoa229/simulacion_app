@@ -2,6 +2,6 @@ package org.simulacion.generator;
 
 import java.util.List;
 
-public interface Generator {
-    List<Double> getNumbers(List<Integer> conditions);
+public interface Generator<T> {
+    List<Double> getNumbers(List<T> conditions);
 }

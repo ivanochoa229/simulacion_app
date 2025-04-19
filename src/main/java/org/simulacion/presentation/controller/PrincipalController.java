@@ -9,12 +9,12 @@ public class PrincipalController {
 
     @FXML
     void selectAdd(ActionEvent event) {
-
+        AppConfig.setScene(Path.ADDITIONAL_CONGRUENTIAL_CONTROLLER);
     }
 
     @FXML
     void selectLehmer(ActionEvent event) {
-
+        AppConfig.setScene(Path.LEHMER_CONTROLLER);
     }
 
     @FXML
@@ -24,11 +24,11 @@ public class PrincipalController {
 
     @FXML
     void selectMix(ActionEvent event) {
-
+        AppConfig.setScene(Path.MIXED_CONGRUENTIAL_CONTROLLER);
     }
 
     @FXML
     void selectMult(ActionEvent event) {
-
+        AppConfig.setScene(Path.MULTIPLICATIVE_CONGRUENTIAL_CONTROLLER);
     }
 }

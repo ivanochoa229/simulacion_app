@@ -3,13 +3,16 @@ package org.simulacion.generator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lehmer {
+public class Lehmer<T extends Number> implements Generator<T> {
     List<Double> numbers;
 
     public Lehmer() {
         this.numbers = new ArrayList<>();
     }
-    public List<Double> getNumbers(int t,int seed, int quantity) {
+
+    @Override
+    public List<Double> getNumbers(List<T> conditions) {
+        int t = conditions.get(0).intValue(), seed = conditions.get(1).intValue(), quantity = conditions.get(2).intValue();
         int n = String.valueOf(seed).length();
         int k = String.valueOf(t).length();
 

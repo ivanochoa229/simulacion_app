@@ -29,6 +29,6 @@ public class PrincipalController {
 
     @FXML
     void selectMult(ActionEvent event) {
-
+        AppConfig.setScene(Path.MULTIPLICATIVE_CONGRUENTIAL_CONTROLLER);
     }
 }

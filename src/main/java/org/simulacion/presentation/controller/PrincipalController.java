@@ -24,7 +24,7 @@ public class PrincipalController {
 
     @FXML
     void selectMix(ActionEvent event) {
-
+        AppConfig.setScene(Path.MIXED_CONGRUENTIAL_CONTROLLER);
     }
 
     @FXML

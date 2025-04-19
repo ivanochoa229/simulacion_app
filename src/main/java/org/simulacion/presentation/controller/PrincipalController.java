@@ -14,7 +14,7 @@ public class PrincipalController {
 
     @FXML
     void selectLehmer(ActionEvent event) {
-
+        AppConfig.setScene(Path.LEHMER_CONTROLLER);
     }
 
     @FXML

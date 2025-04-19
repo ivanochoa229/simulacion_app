@@ -1,12 +1,10 @@
 package org.simulacion.utils;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
@@ -34,4 +32,31 @@ public final class ViewUtils {
     public static void showErrorAlert(String title, String message) {
         new Alert(Alert.AlertType.ERROR, message, ButtonType.OK).showAndWait();
     }
+
+    public static void showInfoAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public static Optional<String> showInputDialog(String title, String message) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle(title);
+        dialog.setHeaderText(null);
+        dialog.setContentText(message);
+        return dialog.showAndWait();
+    }
+
+    public static String formatNumbers3Decimals(List<Double> numbers) {
+        StringBuilder sb = new StringBuilder();
+        for (Double number : numbers) {
+            sb.append(String.format("%.3f", number)).append("");
+        }
+        return sb.toString();
+    }
 }
+
+
+

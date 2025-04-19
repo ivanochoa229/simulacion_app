@@ -3,7 +3,7 @@ package org.simulacion.generator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MiddleSquare implements Generator{
+public class MiddleSquare<T extends Number> implements Generator<T>{
     private final List<Double> numbers;
 
     public MiddleSquare() {
@@ -11,8 +11,10 @@ public class MiddleSquare implements Generator{
     }
 
     @Override
-    public List<Double> getNumbers(List<Integer> conditions) {
-        int seed = conditions.get(0), digits = conditions.get(1), quantity = conditions.get(2);
+    public List<Double> getNumbers(List<T> conditions) {
+        int seed = conditions.get(0).intValue(),
+                digits = conditions.get(1).intValue(),
+                quantity = conditions.get(2).intValue();
         numbers.clear();
         for (int i = 0; i < quantity; i++) {
             String x = String.valueOf((long) Math.pow(seed, 2));

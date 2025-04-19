@@ -9,7 +9,7 @@ public class PrincipalController {
 
     @FXML
     void selectAdd(ActionEvent event) {
-
+        AppConfig.setScene(Path.ADDITIONAL_CONGRUENTIAL_CONTROLLER);
     }
 
     @FXML

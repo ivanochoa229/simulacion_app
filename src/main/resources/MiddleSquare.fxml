@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="508.0" prefWidth="456.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.MiddleSquareController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="187.0" layoutX="39.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="379.0" />
+      <Label layoutX="103.0" layoutY="37.0" text="Semilla" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="81.0" text="Digitos" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="128.0" text="Cantidad" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSead" layoutX="187.0" layoutY="39.0" />
+      <TextField fx:id="txtDigits" layoutX="187.0" layoutY="83.0" />
+      <TextField fx:id="txtQuantity" layoutX="187.0" layoutY="130.0" />
+      <Button layoutX="199.0" layoutY="170.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar" />
+      <TextArea fx:id="txtFieldNumbers" layoutX="39.0" layoutY="266.0" prefHeight="132.0" prefWidth="379.0" />
+      <Label layoutX="46.0" layoutY="222.0" text="Listado de números pseudoaleatorios">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="148.0" layoutY="440.0" mnemonicParsing="false" onAction="#selectTest" text="Verificar" />
+      <Button layoutX="259.0" layoutY="440.0" mnemonicParsing="false" onAction="#returnMain" text="Volver" />
+   </children>
+</AnchorPane>

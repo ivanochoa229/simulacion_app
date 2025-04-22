@@ -7,6 +7,7 @@ import org.simulacion.configuration.AppConfig;
 
 import org.simulacion.generator.MultiplicativeCongruential;
 import org.simulacion.presentation.dto.MultiplicativeCongruentialRequest;
+import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.MultiplicativeCongruentialService;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
@@ -50,6 +51,7 @@ public class MultiplicativeCongruentialController {
                     Integer.parseInt(txtSeed.getText()),
                     Integer.parseInt(txtQuantity.getText()));
             List<Double> numbers = service.generateNumbers(request);
+            GlobalRepository.setSharedNumbers(numbers);
             txtFieldNumbers.setText(ViewUtils.formatNumbers(numbers));
             InputCleaner.clearInputFields(txtSeed, txtA,  txtM, txtQuantity);
         } catch (Exception e) {
@@ -65,6 +67,15 @@ public class MultiplicativeCongruentialController {
     @FXML
     void selectTest(ActionEvent event) {
 
+    }
+
+    @FXML
+    public void initialize() {
+        ViewUtils.setupIntegerTextField(txtM);
+        ViewUtils.setupIntegerTextField(txtA);
+        ViewUtils.setupIntegerTextField(txtQuantity);
+
+        InputCleaner.clearTextAreaOnFocus(txtFieldNumbers, txtA, txtM, txtQuantity);
     }
 
 }

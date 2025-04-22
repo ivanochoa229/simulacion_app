@@ -7,7 +7,9 @@ import javafx.scene.control.TextField;
 import org.simulacion.configuration.AppConfig;
 import org.simulacion.generator.AdditionalCongruential;
 import org.simulacion.presentation.dto.AdditionalCongruentialRequest;
+import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.AdditionalCongruentialService;
+import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
 import org.simulacion.utils.Path;
 import org.simulacion.utils.ViewUtils;
@@ -33,20 +35,20 @@ public class AdditionalCongruentialController {
     private TextField txtModule;
 
     @FXML
-    private TextField txtquantity;
+    private TextField txtQuantity;
 
     private List<Integer> seeds = new ArrayList<>();
 
     @FXML
     void generateNumbers(ActionEvent event) {
-        if (InputValidator.areFieldsEmpty(txtK, txtquantity, txtModule)) {
+        if (InputValidator.areFieldsEmpty(txtK, txtQuantity, txtModule)) {
             ViewUtils.showErrorAlert("Error", "Complete los campos");
             return;
         }
         try {
             int k = Integer.parseInt(txtK.getText());
             int module = Integer.parseInt(txtModule.getText());
-            int quantity = Integer.parseInt(txtquantity.getText());
+            int quantity = Integer.parseInt(txtQuantity.getText());
 
             if (k <= 0 || module <= 0 || quantity <= 0) {
                 ViewUtils.showErrorAlert("Error", "Los valores deben ser positivos");
@@ -57,8 +59,8 @@ public class AdditionalCongruentialController {
             seeds.clear(); // Limpiar lista anterior
             for (int i = 0; i < k+1; i++) {
                 Optional<String> result = ViewUtils.showInputDialog(
-                        "Semilla " + (i),
-                        "Ingrese el valor para la semilla " + (i) + " (entero)"
+                        "Semilla " + (-i),
+                        "Ingrese el valor para la semilla " + (-i) + " (entero)"
                 );
 
                 if (result.isPresent()) {
@@ -78,7 +80,8 @@ public class AdditionalCongruentialController {
             List<Double> numbers = additionalCongruentialService
                     .generateNumbers(
                             new AdditionalCongruentialRequest(k, module, quantity, seeds));
-            txtAreas.setText(ViewUtils.formatNumbers3Decimals(numbers));
+            GlobalRepository.setSharedNumbers(numbers);
+            txtAreas.setText(ViewUtils.formatNumbers(numbers));
         } catch (NumberFormatException e) {
             ViewUtils.showErrorAlert("Error", "Ingrese valores numéricos válidos");
         }
@@ -93,5 +96,14 @@ public class AdditionalCongruentialController {
     @FXML
     void selectTest(ActionEvent event) {
 
+    }
+
+    @FXML
+    public void initialize() {
+        ViewUtils.setupIntegerTextField(txtK);
+        ViewUtils.setupIntegerTextField(txtModule);
+        ViewUtils.setupIntegerTextField(txtQuantity);
+
+        InputCleaner.clearTextAreaOnFocus(txtAreas, txtK, txtModule, txtQuantity);
     }
 }

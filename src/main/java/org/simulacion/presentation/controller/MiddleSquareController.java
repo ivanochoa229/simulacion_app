@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import org.simulacion.configuration.AppConfig;
 import org.simulacion.generator.MiddleSquare;
 import org.simulacion.presentation.dto.MiddleSquareRequest;
+import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.MiddleSquareService;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
@@ -45,6 +46,7 @@ public class MiddleSquareController {
                                                                     Integer.parseInt(txtDigits.getText()),
                                                                     Integer.parseInt(txtQuantity.getText()));
             List<Double> numbers = service.generateNumbers(request);
+            GlobalRepository.setSharedNumbers(numbers);
             txtFieldNumbers.setText(ViewUtils.formatNumbers(numbers));
             InputCleaner.clearInputFields(txtSead, txtDigits, txtQuantity);
         } catch (Exception e) {
@@ -59,7 +61,6 @@ public class MiddleSquareController {
 
     @FXML
     void selectTest(ActionEvent event) {
-
     }
 
     @FXML

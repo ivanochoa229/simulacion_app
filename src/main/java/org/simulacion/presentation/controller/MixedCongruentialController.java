@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import org.simulacion.configuration.AppConfig;
 import org.simulacion.generator.MixedCongruential;
 import org.simulacion.presentation.dto.MixedCongruentialRequest;
+import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.MixedCongruentialService;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
@@ -54,6 +55,7 @@ public class MixedCongruentialController {
                     Integer.parseInt(txtSead.getText()),
                     Integer.parseInt(txtQuantity.getText()));
             List<Double> numbers = service.generateNumbers(request);
+            GlobalRepository.setSharedNumbers(numbers);
             txtFieldNumbers.setText(ViewUtils.formatNumbers(numbers));
             InputCleaner.clearInputFields(txtSead, txtA, txtC, txtM, txtQuantity);
         } catch (Exception e) {
@@ -69,6 +71,17 @@ public class MixedCongruentialController {
     @FXML
     void selectTest(ActionEvent event) {
 
+    }
+
+    @FXML
+    public void initialize() {
+        ViewUtils.setupIntegerTextField(txtA);
+        ViewUtils.setupIntegerTextField(txtC);
+        ViewUtils.setupIntegerTextField(txtM);
+        ViewUtils.setupIntegerTextField(txtQuantity);
+        ViewUtils.setupIntegerTextField(txtSead);
+
+        InputCleaner.clearTextAreaOnFocus(txtFieldNumbers, txtA, txtC, txtM, txtQuantity, txtSead);
     }
 
 }

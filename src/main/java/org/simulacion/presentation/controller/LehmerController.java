@@ -8,6 +8,7 @@ import org.simulacion.configuration.AppConfig;
 import org.simulacion.generator.Lehmer;
 import org.simulacion.presentation.dto.LehmerRequest;
 import org.simulacion.presentation.dto.MiddleSquareRequest;
+import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.LehmerService;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
@@ -47,6 +48,7 @@ public class LehmerController {
                     Integer.parseInt(txtSead.getText()),
                     Integer.parseInt(txtQuantity.getText()));
             List<Double> numbers = lehmerService.generateNumbers(request);
+            GlobalRepository.setSharedNumbers(numbers);
             txtFieldNumbers.setText(ViewUtils.formatNumbers(numbers));
             InputCleaner.clearInputFields(txtSead, txtT, txtQuantity);
         } catch (Exception e) {
@@ -62,5 +64,14 @@ public class LehmerController {
     @FXML
     void selectTest(ActionEvent event) {
 
+    }
+
+    @FXML
+    public void initialize() {
+        ViewUtils.setupIntegerTextField(txtSead);
+        ViewUtils.setupIntegerTextField(txtT);
+        ViewUtils.setupIntegerTextField(txtQuantity);
+
+        InputCleaner.clearTextAreaOnFocus(txtFieldNumbers, txtSead, txtT, txtQuantity);
     }
 }

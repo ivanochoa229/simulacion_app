@@ -49,13 +49,7 @@ public final class ViewUtils {
         return dialog.showAndWait();
     }
 
-    public static String formatNumbers3Decimals(List<Double> numbers) {
-        StringBuilder sb = new StringBuilder();
-        for (Double number : numbers) {
-            sb.append(String.format("%.3f", number)).append("");
-        }
-        return sb.toString();
-    }
+
 }
 
 

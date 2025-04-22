@@ -40,10 +40,12 @@ public class AdditionalCongruential<T extends Number> implements Generator<T> {
         for (int i = seeds.size(); i < seeds.size() + quantity; i++) {
             int ni = (values.get(i - 1) + values.get(i - k - 1)) % module;
             values.add(ni);
-            results.add(ni / (double) module);
+            double number = ni / (double) module;
+            // Redondear a 3 decimales
+            number = Math.round(number * 1000.0) / 1000.0;
+            results.add(number);
         }
-
-        results.forEach(u -> System.out.printf("%.3f%n", u));
+        results.forEach(u -> System.out.printf( u.toString()));
         return results;
     }
 }

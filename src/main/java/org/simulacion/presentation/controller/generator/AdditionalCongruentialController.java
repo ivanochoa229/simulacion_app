@@ -1,4 +1,4 @@
-package org.simulacion.presentation.controller.generator;
+package org.simulacion.presentation.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,7 +57,7 @@ public class AdditionalCongruentialController {
 
             // 3. Pedir las k semillas al usuario
             seeds.clear(); // Limpiar lista anterior
-            for (int i = 0; i < k+1; i++) {
+            for (int i = 0; i < k + 1; i++) {
                 Optional<String> result = ViewUtils.showInputDialog(
                         "Semilla " + (-i),
                         "Ingrese el valor para la semilla " + (-i) + " (entero)"
@@ -95,7 +95,6 @@ public class AdditionalCongruentialController {
 
     @FXML
     void selectTest(ActionEvent event) {
-        AppConfig.setScene(Path.SELECT_TEST_CONTROLLER);
     }
 
     @FXML

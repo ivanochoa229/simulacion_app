@@ -9,14 +9,12 @@ import org.simulacion.generator.AdditionalCongruential;
 import org.simulacion.presentation.dto.AdditionalCongruentialRequest;
 import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.AdditionalCongruentialService;
-import org.simulacion.test.KolmogorovSmirnovTest;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
 import org.simulacion.utils.Path;
 import org.simulacion.utils.ViewUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 

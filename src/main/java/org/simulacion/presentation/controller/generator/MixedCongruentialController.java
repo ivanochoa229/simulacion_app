@@ -1,14 +1,14 @@
-package org.simulacion.presentation.controller;
+package org.simulacion.presentation.controller.generator;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.simulacion.configuration.AppConfig;
-
-import org.simulacion.generator.MultiplicativeCongruential;
-import org.simulacion.presentation.dto.MultiplicativeCongruentialRequest;
+import org.simulacion.generator.MixedCongruential;
+import org.simulacion.presentation.dto.MixedCongruentialRequest;
 import org.simulacion.repository.GlobalRepository;
-import org.simulacion.service.MultiplicativeCongruentialService;
+import org.simulacion.service.MixedCongruentialService;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
 import org.simulacion.utils.Path;
@@ -16,16 +16,19 @@ import org.simulacion.utils.ViewUtils;
 
 import java.util.List;
 
-public class MultiplicativeCongruentialController {
+public class MixedCongruentialController {
 
-    private final MultiplicativeCongruentialService service;
+    private final MixedCongruentialService service;
 
-    public MultiplicativeCongruentialController() {
-        this.service = new MultiplicativeCongruentialService(new MultiplicativeCongruential());
+    public MixedCongruentialController() {
+        this.service = new MixedCongruentialService(new MixedCongruential());
     }
 
     @FXML
     private TextField txtA;
+
+    @FXML
+    private TextField txtC;
 
     @FXML
     private TextArea txtFieldNumbers;
@@ -37,23 +40,24 @@ public class MultiplicativeCongruentialController {
     private TextField txtQuantity;
 
     @FXML
-    private TextField txtSeed;
+    private TextField txtSead;
 
     @FXML
     void generateNumbers(ActionEvent event) {
-        if (InputValidator.areFieldsEmpty(txtSeed, txtA, txtM, txtQuantity)) {
+        if (InputValidator.areFieldsEmpty(txtSead, txtA, txtC, txtM, txtQuantity)) {
             ViewUtils.showErrorAlert("Error", "Complete los campos");
             return;
         }
         try {
-            MultiplicativeCongruentialRequest request = new MultiplicativeCongruentialRequest(  Integer.parseInt(txtA.getText()),
+            MixedCongruentialRequest request = new MixedCongruentialRequest(  Integer.parseInt(txtA.getText()),
+                    Integer.parseInt(txtC.getText()),
                     Integer.parseInt(txtM.getText()),
-                    Integer.parseInt(txtSeed.getText()),
+                    Integer.parseInt(txtSead.getText()),
                     Integer.parseInt(txtQuantity.getText()));
             List<Double> numbers = service.generateNumbers(request);
             GlobalRepository.setSharedNumbers(numbers);
             txtFieldNumbers.setText(ViewUtils.formatNumbers(numbers));
-            InputCleaner.clearInputFields(txtSeed, txtA,  txtM, txtQuantity);
+            InputCleaner.clearInputFields(txtSead, txtA, txtC, txtM, txtQuantity);
         } catch (Exception e) {
             ViewUtils.showErrorAlert("Error", e.getMessage());
         }
@@ -66,16 +70,18 @@ public class MultiplicativeCongruentialController {
 
     @FXML
     void selectTest(ActionEvent event) {
-
+        AppConfig.setScene(Path.SELECT_TEST_CONTROLLER);
     }
 
     @FXML
     public void initialize() {
-        ViewUtils.setupIntegerTextField(txtM);
         ViewUtils.setupIntegerTextField(txtA);
+        ViewUtils.setupIntegerTextField(txtC);
+        ViewUtils.setupIntegerTextField(txtM);
         ViewUtils.setupIntegerTextField(txtQuantity);
+        ViewUtils.setupIntegerTextField(txtSead);
 
-        InputCleaner.clearTextAreaOnFocus(txtFieldNumbers, txtA, txtM, txtQuantity);
+        InputCleaner.clearTextAreaOnFocus(txtFieldNumbers, txtA, txtC, txtM, txtQuantity, txtSead);
     }
 
 }

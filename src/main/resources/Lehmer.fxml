@@ -9,30 +9,36 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="430.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.LehmerController">
+<AnchorPane prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.LehmerController">
+
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="177.0" layoutX="12.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="305.0" />
-      <Label layoutX="43.0" layoutY="39.0" text="Semilla" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="177.0" layoutX="52.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
+      <Label layoutX="122.0" layoutY="38.0" text="Semilla" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="68.0" layoutY="84.0" text="t" textFill="WHITE">
+      <Label layoutX="169.0" layoutY="82.0" text="t" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="130.0" text="Cantidad" textFill="WHITE">
+      <Label layoutX="99.0" layoutY="129.0" text="Cantidad" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSead" layoutX="127.0" layoutY="41.0" />
-      <TextField fx:id="txtT" layoutX="127.0" layoutY="85.0" />
-      <TextField fx:id="txtQuantity" layoutX="127.0" layoutY="132.0" />
-      <Button layoutX="139.0" layoutY="172.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar" />
-      <TextArea fx:id="txtFieldNumbers" layoutX="25.0" layoutY="238.0" prefHeight="132.0" prefWidth="284.0" />
-      <Button layoutX="85.0" layoutY="374.0" mnemonicParsing="false" onAction="#selectTest" text="Verificar" />
-      <Button layoutX="198.0" layoutY="374.0" mnemonicParsing="false" onAction="#returnMain" text="Volver" />
+      <TextField fx:id="txtSead" layoutX="214.0" layoutY="41.0" />
+      <TextField fx:id="txtT" layoutX="214.0" layoutY="85.0" />
+      <TextField fx:id="txtQuantity" layoutX="214.0" layoutY="132.0" />
+      <Button layoutX="195.0" layoutY="172.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar" />
+      <TextArea fx:id="txtFieldNumbers" layoutX="60.0" layoutY="286.0" prefHeight="132.0" prefWidth="337.0" />
+      <Button layoutX="144.0" layoutY="440.0" mnemonicParsing="false" onAction="#selectTest" text="Verificar" />
+      <Button layoutX="257.0" layoutY="440.0" mnemonicParsing="false" onAction="#returnMain" text="Volver" />
+      <Label layoutX="42.0" layoutY="234.0" text="Listado de números pseudoaleatorios" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,4 +1,4 @@
-package org.simulacion.presentation.controller;
+package org.simulacion.presentation.controller.generator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +61,7 @@ public class MiddleSquareController {
 
     @FXML
     void selectTest(ActionEvent event) {
+        AppConfig.setScene(Path.SELECT_TEST_CONTROLLER);
     }
 
     @FXML

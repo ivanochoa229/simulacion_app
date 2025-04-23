@@ -8,48 +8,47 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="537.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.MixedCongruentialController">
+<AnchorPane prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.MixedCongruentialController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="256.0" layoutX="29.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" width="379.0" />
-      <Label layoutX="93.0" layoutY="32.0" text="Semilla" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="220.0" layoutX="29.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" width="379.0" />
+      <Label layoutX="123.0" layoutY="49.0" text="Semilla" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="103.0" layoutY="77.0" text="a" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="173.0" layoutY="78.0" text="a" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="193.0" text="Cantidad" textFill="WHITE">
+      <Label layoutX="109.0" layoutY="166.0" text="Cantidad" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSead" layoutX="177.0" layoutY="34.0" />
-      <TextField fx:id="txtA" layoutX="177.0" layoutY="78.0" />
-      <TextField fx:id="txtQuantity" layoutX="174.0" layoutY="194.0" />
-      <Button layoutX="189.0" layoutY="232.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar" />
-      <TextArea fx:id="txtFieldNumbers" layoutX="29.0" layoutY="337.0" prefHeight="132.0" prefWidth="379.0" />
-      <Label layoutX="36.0" layoutY="289.0" text="Listado de números pseudoaleatorios">
+      <TextField fx:id="txtSead" layoutX="219.0" layoutY="51.0" />
+      <TextField fx:id="txtA" layoutX="219.0" layoutY="80.0" />
+      <TextField fx:id="txtQuantity" layoutX="219.0" layoutY="168.0" />
+      <Button layoutX="189.0" layoutY="211.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar" />
+      <TextArea fx:id="txtFieldNumbers" layoutX="30.0" layoutY="306.0" prefHeight="132.0" prefWidth="379.0" />
+      <Label layoutX="37.0" layoutY="266.0" text="Listado de números pseudoaleatorios">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="135.0" layoutY="490.0" mnemonicParsing="false" onAction="#selectTest" text="Verificar" />
-      <Button layoutX="248.0" layoutY="490.0" mnemonicParsing="false" onAction="#returnMain" text="Volver" />
-      <Label layoutX="108.0" layoutY="120.0" text="c" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="140.0" layoutY="455.0" mnemonicParsing="false" onAction="#selectTest" text="Verificar" />
+      <Button layoutX="244.0" layoutY="455.0" mnemonicParsing="false" onAction="#returnMain" text="Volver" />
+      <Label layoutX="174.0" layoutY="106.0" text="c" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtC" layoutX="174.0" layoutY="121.0" />
-      <Label layoutX="105.0" layoutY="155.0" text="m" textAlignment="CENTER" textFill="WHITE">
+      <TextField fx:id="txtC" layoutX="219.0" layoutY="108.0" />
+      <Label layoutX="170.0" layoutY="136.0" text="m" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtM" layoutX="174.0" layoutY="156.0" />
+      <TextField fx:id="txtM" layoutX="219.0" layoutY="138.0" />
    </children>
 </AnchorPane>

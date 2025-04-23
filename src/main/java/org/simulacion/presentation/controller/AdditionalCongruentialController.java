@@ -9,12 +9,14 @@ import org.simulacion.generator.AdditionalCongruential;
 import org.simulacion.presentation.dto.AdditionalCongruentialRequest;
 import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.AdditionalCongruentialService;
+import org.simulacion.test.KolmogorovSmirnovTest;
 import org.simulacion.utils.InputCleaner;
 import org.simulacion.utils.InputValidator;
 import org.simulacion.utils.Path;
 import org.simulacion.utils.ViewUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +59,7 @@ public class AdditionalCongruentialController {
 
             // 3. Pedir las k semillas al usuario
             seeds.clear(); // Limpiar lista anterior
-            for (int i = 0; i < k+1; i++) {
+            for (int i = 0; i < k + 1; i++) {
                 Optional<String> result = ViewUtils.showInputDialog(
                         "Semilla " + (-i),
                         "Ingrese el valor para la semilla " + (-i) + " (entero)"
@@ -95,7 +97,6 @@ public class AdditionalCongruentialController {
 
     @FXML
     void selectTest(ActionEvent event) {
-
     }
 
     @FXML

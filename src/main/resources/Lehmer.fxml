@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="430.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.LehmerController">
+<AnchorPane prefHeight="430.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.generator.LehmerController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="177.0" layoutX="12.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="305.0" />
       <Label layoutX="43.0" layoutY="39.0" text="Semilla" textFill="WHITE">

@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 
 
-<AnchorPane prefHeight="438.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.AdditionalCongruentialController">
+<AnchorPane prefHeight="438.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.generator.AdditionalCongruentialController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="35.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="276.0" />
       <Label layoutX="49.0" layoutY="36.0" text="Número k" textFill="WHITE" />

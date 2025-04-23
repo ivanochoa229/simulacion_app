@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="495.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.MultiplicativeCongruentialController">
+<AnchorPane prefHeight="495.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.simulacion.presentation.controller.generator.MultiplicativeCongruentialController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="238.0" layoutX="39.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="379.0" />
       <Label layoutX="103.0" layoutY="42.0" text="Semilla" textFill="WHITE">

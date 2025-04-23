@@ -1,4 +1,4 @@
-package org.simulacion.presentation.controller;
+package org.simulacion.presentation.controller.generator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 import org.simulacion.configuration.AppConfig;
 import org.simulacion.generator.Lehmer;
 import org.simulacion.presentation.dto.LehmerRequest;
-import org.simulacion.presentation.dto.MiddleSquareRequest;
 import org.simulacion.repository.GlobalRepository;
 import org.simulacion.service.LehmerService;
 import org.simulacion.utils.InputCleaner;
@@ -63,7 +62,7 @@ public class LehmerController {
 
     @FXML
     void selectTest(ActionEvent event) {
-
+        AppConfig.setScene(Path.SELECT_TEST_CONTROLLER);
     }
 
     @FXML

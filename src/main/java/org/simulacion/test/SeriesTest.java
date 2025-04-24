@@ -8,8 +8,8 @@ public class SeriesTest implements TestInterface {
     @Override
     public Boolean checkSample(List<Double> sample, List<Integer> conditions) {
         int n = sample.size() - 1;
-        int x = conditions.get(0);
-        double alfa = conditions.get(1) / 100.0;
+        int x = conditions.get(1);
+        double alfa = conditions.get(0) / 100.0;
 
         if (n <= 0 || x <= 0 || x > n) return false;
 

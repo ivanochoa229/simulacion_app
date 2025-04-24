@@ -49,6 +49,10 @@ public final class ViewUtils {
         return dialog.showAndWait();
     }
 
+    public static void resetLabel(Label label) {
+        label.setText("El conjunto de datos ");
+        label.setStyle("");
+    }
 
 }
 

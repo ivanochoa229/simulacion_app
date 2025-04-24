@@ -8,9 +8,9 @@ public class FrequencyTest implements TestInterface {
     @Override
     public Boolean checkSample(List<Double> sample, List<Integer> conditions) {
         int n = sample.size(); // Tamaño de la muestra
-        int alfaint = conditions.get(1); //Alfa
+        int alfaint = conditions.get(0); //Alfa
         double alfa = alfaint/100.0;
-        int x = conditions.get(0); // Número de subintervalos
+        int x = conditions.get(1); // Número de subintervalos
         if (x <= 0 || n <= 0 || x > n) return false;
 
         // Paso 2: Frecuencia esperada

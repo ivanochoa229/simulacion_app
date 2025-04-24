@@ -4,12 +4,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.simulacion.test.TestInterface;
 
 import java.io.IOException;
 import java.util.List;
 
 public class AppConfig {
     private static Stage primaryStage;
+    public static TestInterface selectedTest;
+    public static String testName;
 
     public static void initialize(Stage stage) {
         primaryStage = stage;

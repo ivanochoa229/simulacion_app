@@ -11,6 +11,10 @@ public class KolmogorovSmirnovTest implements TestInterface {
     public KolmogorovSmirnovTest(List<Double> sharedNumbers, List<Integer> conditions) {
     }
 
+    public KolmogorovSmirnovTest() {
+
+    }
+
     @Override
     public Boolean checkSample(List<Double> sample, List<Integer> conditions) {
 

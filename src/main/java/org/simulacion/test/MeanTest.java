@@ -9,8 +9,8 @@ public class MeanTest implements TestInterface {
     @Override
     public Boolean checkSample(List<Double> sample, List<Integer> conditions) {
         int n = sample.size(); // Tamaño de la muestra
-        int alfaint = conditions.get(1); //Alfa en entero
-        double alfa = alfaint / 100.0;
+        int alfaInt = conditions.get(0);
+        double alfa = alfaInt / 100.0;
 
         // 1. Calcular el promedio aritmético X̄
         double sum = 0;

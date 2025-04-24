@@ -5,7 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import org.simulacion.configuration.AppConfig;
+import org.simulacion.repository.GlobalRepository;
 import org.simulacion.utils.Path;
+import org.simulacion.utils.ViewUtils;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class TestOnlyAlphaController {
 
@@ -19,6 +24,16 @@ public class TestOnlyAlphaController {
     @FXML
     void doTest(ActionEvent event) {
         Integer selectedValue = jComboAlpha.getValue();
+        List<Double> sample = GlobalRepository.getSharedNumbers();
+        List<Integer> conditions = Arrays.asList(selectedValue);
+        boolean passed = AppConfig.selectedTest.checkSample(sample, conditions);
+        if (passed) {
+            labelTest.setText("El conjunto de datos paso la prueba");
+            labelTest.setStyle("-fx-text-fill: green;");
+        } else {
+            labelTest.setText("El conjunto de datos no paso la prueba");
+            labelTest.setStyle("-fx-text-fill: red;");
+        }
     }
 
     @FXML
@@ -39,6 +54,7 @@ public class TestOnlyAlphaController {
         jComboAlpha.valueProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 System.out.println("Valor seleccionado: " + newVal);
+                ViewUtils.resetLabel(labelTest);
             }
         });
     }
